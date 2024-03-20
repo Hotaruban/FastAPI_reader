@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FlyLab Feed</title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <div id="logAndSearch">
+		<h1>FlyLab Feed</h1><br />
+        <form id="connectUser">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required><br />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required><br />
+            <button type="button" id="connectButton">Connect</button>
+        </form>
+        <form id="selectDateAndDevice" style="display: none;">
+            <label for="startDate">Start Date</label>
+            <input type="date" id="startDate" name="startDate" required><br />
+            <label for="endDate">End Date</label>
+            <input type="date" id="endDate" name="endDate" required><br />
+            <label for="device">Device</label><br />
+            <select id="device" name="device" required>
+                <option value="manna1">Manna 1</option>
+                <option value="manna2">Manna 2</option>
+            </select><br />
+            <div id="columnCheckboxes"></div><br />
+            <button type="button" id="submitDateAndDevice">Submit</button>
+        </form>
+        <script type="module" src="./collectUserInfo.js"></script>
+    </div>
+    <div id="getDataDevice"></div>
+</body>
+</html>
