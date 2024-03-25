@@ -9,6 +9,10 @@ button {
 	width: 90%;
 }
 
+#columnCheckboxes {
+	text-align: left !important;
+}
+
 /* Basic CSS styles */
 #logAndSearch {
     font-family: Arial, sans-serif;

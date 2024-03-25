@@ -6,6 +6,22 @@ document.addEventListener("DOMContentLoaded", function() {
     var dateStr = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
     document.getElementById('startDate').value = dateStr;
     document.getElementById('endDate').value = dateStr;
+	var logoutButton = document.getElementById("logoutButton");
+    logoutButton.addEventListener("click", function() {
+        // Remove token from localStorage
+        localStorage.removeItem('token');
+
+        // Hide selectDateAndDevice form and logout button, show connectUser form
+        document.getElementById('selectDateAndDevice').style.display = 'none';
+        document.getElementById('logoutButton').style.display = 'none';
+        document.getElementById('connectUser').style.display = 'block';
+    });
+	// Check if token exists in localStorage
+	if (localStorage.getItem('token')) {
+		// If token exists, hide connectUser form and show selectDateAndDevice form
+		document.getElementById('connectUser').style.display = 'none';
+		document.getElementById('selectDateAndDevice').style.display = 'block';
+	}
 });
 
 function collectUserInfo() {
