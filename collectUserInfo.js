@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	var logoutButton = document.getElementById("logoutButton");
     logoutButton.addEventListener("click", function() {
         // Remove token from localStorage
+		console.log("Token removed.")
         localStorage.removeItem('token');
 
         // Hide selectDateAndDevice form and logout button, show connectUser form
@@ -59,7 +60,8 @@ function collectUserInfo() {
 		return response.json();
 	})
 	.then(response => {
-		console.log("Access token accepted: " + response.access_token);
+		console.log("Token received.")
+		//console.log("Access token accepted: " + response.access_token);
 		localStorage.setItem('token', response.access_token);
 		localStorage.setItem('tokenType', response.token_type);
 		document.getElementById('connectUser').style.display = 'none';
