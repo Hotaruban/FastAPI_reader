@@ -34,7 +34,7 @@ function collectUserInfo() {
 		'password': password
 	};
 
-	var apiUrl = "https://main-bvxea6i-pr4445soispvo.eu-5.platformsh.site/api/v1/login";
+	var apiUrl = "/api/v1/login";
 	var acceptHeader = "application/json";
 	var contentType = "application/x-www-form-urlencoded";
 
@@ -113,7 +113,7 @@ document.getElementById('submitDateAndDevice').addEventListener('click', functio
 
     const deviceId = deviceIds[device];
 
-    const url = new URL(`https://main-bvxea6i-pr4445soispvo.eu-5.platformsh.site/api/v1/devices/data/${deviceId}`);
+    const url = new URL(`/api/v1/devices/data/${deviceId}`);
     url.searchParams.append('start_datetime', startDate);
     url.searchParams.append('end_datetime', endDate);
     url.searchParams.append('csv_file', 'false');
